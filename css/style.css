@@ -1,0 +1,202 @@
+:root {
+  --clr-light: #eaf6f6;
+  --clr-primary: #66bfbf;
+  --clr-acsent: #ff0063;
+  --clr-fff: #fff;
+  --clr-dark: #555;
+  --br-10: 10px;
+  --shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 1rem 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #000;
+}
+
+@media (max-width: 300px) {
+  .container .counter-container {
+    padding: 2rem 1rem;
+  }
+}
+
+.counter-container {
+  position: relative;
+  min-width: 250px;
+  width: 600px;
+  padding: 2rem;
+  border-radius: var(--br-10);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--clr-primary)), to(var(--clr-light)));
+  background-image: linear-gradient(to bottom, var(--clr-primary), var(--clr-light));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.increment-btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 575px) {
+  .increment-btn-container .increment {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .increment-btn-container .decrement {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+h2 {
+  color: var(--clr-dark);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn {
+  width: 200px;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: var(--br-10);
+  background-color: var(--clr-fff);
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+  color: var(--clr-dark);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.save-entry {
+  background-color: transparent;
+  color: var(--clr-acsent);
+  border: 1px solid var(--clr-acsent);
+  border-radius: var(--br-10);
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.save-entry:hover {
+  background-color: var(--clr-acsent);
+  color: var(--clr-fff);
+}
+
+.count-element {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: var(--clr-fff);
+  border-radius: var(--br-10);
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
+  color: var(--clr-dark);
+  padding: 0.5rem 2rem;
+  margin: 1rem 0 2rem;
+}
+
+.entry-log {
+  color: var(--clr-dark);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.checker-container {
+  width: 100%;
+  height: 0;
+  background-color: var(--clr-acsent);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: var(--br-10);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  z-index: -1;
+}
+
+.checker-container p {
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--clr-fff);
+  padding: 1rem 2rem;
+}
+
+.checker-active {
+  opacity: 1;
+  bottom: 0%;
+  height: 80%;
+  pointer-events: auto;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+@media (min-width: 526px) {
+  .container {
+    padding: 1rem;
+  }
+  .increment-btn-container {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 525px) {
+  .increment-btn-container {
+    gap: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

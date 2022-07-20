@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Izzy Counter App</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="counter-container">
+        <h2 class="title">Izzy Counter</h2>
+        <p class="count-element">0</p>
+        <div class="increment-btn-container">
+          <button class="btn decrement" onclick="countDecrement()">
+            Remove Entry
+          </button>
+          <button class="btn increment" onclick="countIncrement()">
+            Add Entry
+          </button>
+        </div>
+        <button class="btn save-entry">Save Entry</button>
+        <!-- <button class="btn save-count" onclick="saveEntry()">Save Entry</button> -->
+        <p class="entry-log">Previous Entries:</p>
+
+        <div class="checker-container">
+          <p class="checker-confirm" onclick="saveEntry()">Ok</p>
+          <p class="checker-cancel" onclick="cancelEntry()">Cancel</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
