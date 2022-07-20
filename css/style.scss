@@ -135,12 +135,15 @@ h2 {
   transition: 0.5s ease;
   z-index: -1;
 
-  p {
+  .checker-btn {
     font-weight: bold;
+    font-size: 1.2rem;
     // margin: 0.5rem 1rem;
     cursor: pointer;
     color: var(--clr-fff);
     padding: 1rem 2rem;
+    border: 2px solid var(--clr-fff);
+    border-radius: var(--br-10);
   }
 }
 

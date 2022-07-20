@@ -168,11 +168,14 @@ h2 {
   z-index: -1;
 }
 
-.checker-container p {
+.checker-container .checker-btn {
   font-weight: bold;
+  font-size: 1.2rem;
   cursor: pointer;
   color: var(--clr-fff);
   padding: 1rem 2rem;
+  border: 2px solid var(--clr-fff);
+  border-radius: var(--br-10);
 }
 
 .checker-active {
