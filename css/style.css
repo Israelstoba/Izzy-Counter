@@ -47,7 +47,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   background-color: var(--clr-grey-300);
-  overflow: hidden;
 }
 
 @media (max-width: 300px) {
@@ -102,6 +101,50 @@ h2 {
           box-shadow: var(--neumorphism);
 }
 
+.item-name-wrapper {
+  width: 100%;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-name-wrapper ::-webkit-input-placeholder {
+  color: var(--clr-dark);
+}
+
+.item-name-wrapper :-ms-input-placeholder {
+  color: var(--clr-dark);
+}
+
+.item-name-wrapper ::-ms-input-placeholder {
+  color: var(--clr-dark);
+}
+
+.item-name-wrapper ::placeholder {
+  color: var(--clr-dark);
+}
+
+.item-name-wrapper .item-name {
+  width: 250px;
+  padding: 1rem 2rem;
+  border-radius: var(--br-10);
+  color: var(--clr-dark);
+  background-color: var(--clr-grey-300);
+  -webkit-box-shadow: var(--neumorphism-inset);
+          box-shadow: var(--neumorphism-inset);
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  outline: none;
+}
+
 .increment-btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,8 +162,8 @@ h2 {
 
 .increment-btn-container .btn {
   padding: 0px;
-  width: 50px;
-  height: 50px;
+  width: 90px;
+  height: 90px;
   font-size: 2rem;
   border-radius: 50%;
 }
@@ -278,5 +321,52 @@ h2 {
   pointer-events: auto;
   z-index: 1000;
   pointer-events: auto;
+}
+
+.result-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--br-10);
+  background-color: var(--clr-grey-300);
+}
+
+.result-container .exit-result {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.6rem;
+}
+
+.result-container .title {
+  margin-top: 3rem;
+}
+
+.result-container .download-btn:hover {
+  color: var(--clr-positve);
+}
+
+.result-container .text-area {
+  resize: none;
+  width: 100%;
+  min-height: 300px;
+  background-color: transparent;
+  border-radius: var(--br-10);
+  border: 2px solid var(--clr-positve);
+  margin-bottom: 2rem;
+  color: var(--clr-dark);
+  font-weight: bold;
+  font-size: 1.3rem;
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */
