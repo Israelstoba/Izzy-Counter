@@ -5,6 +5,8 @@
   --clr-fff: #fff;
   --clr-dark: #555;
   --br-10: 10px;
+  --clr-positve: #2abf77;
+  --clr-negative: #ff1744;
   --shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -44,7 +46,7 @@
 .counter-container {
   position: relative;
   min-width: 250px;
-  width: 600px;
+  width: 400px;
   padding: 2rem;
   border-radius: var(--br-10);
   background-image: -webkit-gradient(linear, left top, left bottom, from(var(--clr-primary)), to(var(--clr-light)));
@@ -79,17 +81,12 @@
           align-items: center;
 }
 
-@media (max-width: 575px) {
-  .increment-btn-container .increment {
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-  .increment-btn-container .decrement {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
-  }
+.increment-btn-container .btn {
+  padding: 0px;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  border-radius: 50%;
 }
 
 h2 {
@@ -112,17 +109,16 @@ h2 {
   font-size: 1.2rem;
 }
 
-.save-entry {
+.save-count {
   background-color: transparent;
-  color: var(--clr-acsent);
-  border: 1px solid var(--clr-acsent);
-  border-radius: var(--br-10);
+  color: var(--clr-negative);
+  border: 1px solid var(--clr-negative);
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
 
-.save-entry:hover {
-  background-color: var(--clr-acsent);
+.save-count:hover {
+  background-color: var(--clr-negative);
   color: var(--clr-fff);
 }
 
@@ -144,20 +140,64 @@ h2 {
   font-size: 1.1rem;
 }
 
+.increment-active {
+  background-color: var(--clr-positve);
+  color: white;
+  -webkit-animation: pulse 0.3s ease-in-out;
+          animation: pulse 0.3s ease-in-out;
+}
+
+.decrement-active {
+  background-color: var(--clr-negative);
+  color: white;
+  -webkit-animation: pulse 0.3s ease-in-out;
+          animation: pulse 0.3s ease-in-out;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .checker-container {
   width: 100%;
   height: 0;
-  background-color: var(--clr-acsent);
+  background-color: var(--clr-fff);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 3rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 3rem;
   border-radius: var(--br-10);
   position: absolute;
   bottom: 0;
@@ -169,13 +209,23 @@ h2 {
 }
 
 .checker-container .checker-btn {
+  width: 125px;
   font-weight: bold;
   font-size: 1.2rem;
+  text-align: center;
   cursor: pointer;
-  color: var(--clr-fff);
-  padding: 1rem 2rem;
-  border: 2px solid var(--clr-fff);
+  padding: 1rem;
   border-radius: var(--br-10);
+}
+
+.checker-container .checker-confirm {
+  color: var(--clr-positve);
+  border: 2px solid var(--clr-positve);
+}
+
+.checker-container .checker-cancel {
+  color: var(--clr-negative);
+  border: 2px solid var(--clr-negative);
 }
 
 .checker-active {
@@ -185,21 +235,5 @@ h2 {
   pointer-events: auto;
   z-index: 1000;
   pointer-events: auto;
-}
-
-@media (min-width: 526px) {
-  .container {
-    padding: 1rem;
-  }
-  .increment-btn-container {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-  }
-}
-
-@media (max-width: 525px) {
-  .increment-btn-container {
-    gap: 0;
-  }
 }
 /*# sourceMappingURL=style.css.map */

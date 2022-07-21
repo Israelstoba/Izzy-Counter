@@ -1,68 +1,66 @@
 var countElement = document.querySelector(".count-element");
 var countLog = document.querySelector(".entry-log");
-
-countElement.innerHTML = 0;
-let increment = -1;
-let decrement = 0;
-
-function countIncrement() {
-  increment += 1;
-  countElement.innerHTML = increment + 1;
-}
-
-function countDecrement() {
-  decrement = increment += -1;
-  countElement.innerHTML = decrement + 1;
-
-  if (decrement <= 0) {
-    countElement.innerHTML = 0;
-    increment = -1;
-    decrement = 0;
-  }
-}
-
-function saveEntry() {
-  let newCount = countElement.innerHTML;
-  countLog.innerHTML += " " + newCount + " , ";
-  countElement.innerHTML = 0;
-  increment = -1;
-  decrement = 0;
-
-  //   /////////////to confirm entry submittion ///////////
-  //   function checker() {
-  //     let result = confirm("Are you sure you want to save this entry?");
-  //     if (result == false) {
-  //       e.preventDefault();
-  //     } else {
-  //     }
-  //   }
-  //   checker();
-}
-
-function cancelEntry() {
-  countElement.innerHTML = 0;
-  increment = -1;
-  decrement = 0;
-}
-
-///////////////checker
-var checkerOpen = document.querySelector(".save-entry");
-var checkerClose = document.querySelector(".checker-cancel");
+var incrementBtn = document.querySelector(".increment");
+var decrementBtn = document.querySelector(".decrement");
+var saveBtn = document.querySelector(".save-count");
+var checkerConfirm = document.querySelector(".checker-confirm");
+var checkerCancel = document.querySelector(".checker-cancel");
 var checkerBg = document.querySelector(".checker-container");
 
-///////checker appears
-checkerOpen.addEventListener("click", function () {
+/////////////initialize the value of count to be 0
+let count = 0;
+
+///////////listen to the increment button when it is clicked
+incrementBtn.addEventListener("click", () => {
+  count++;
+  countElement.innerHTML = count;
+
+  colorChange();
+});
+///////////listen to the decrement button when it is clicked
+decrementBtn.addEventListener("click", () => {
+  count--;
+  countElement.innerHTML = count;
+  if (count <= 0) {
+    countElement.innerHTML = 0;
+    count = 0;
+  }
+  colorChange();
+});
+
+saveBtn.addEventListener("click", () => {
   checkerBg.classList.add("checker-active");
 });
 
-///////// checker exits
-checkerClose.addEventListener("click", function () {
+//////////to  save the value of the countElement
+checkerConfirm.addEventListener("click", () => {
+  countLog.innerHTML += " " + count + " ,";
+  count = 0;
+  countElement.innerHTML = 0;
   checkerBg.classList.remove("checker-active");
+  countElement.classList.remove("increment-active");
+  countElement.classList.remove("decrement-active");
+});
+//////////to  cancel count entry
+checkerCancel.addEventListener("click", () => {
+  count = 0;
+  countElement.innerHTML = 0;
+  checkerBg.classList.remove("checker-active");
+  countElement.classList.remove("increment-active");
+  countElement.classList.remove("decrement-active");
 });
 
-///////////////remove checkerbg with the checker-confirm btn
-var removeWithCheckerConfirm = document.querySelector(".checker-confirm");
+//////////// to add color change to the countElement
 
-removeWithCheckerConfirm.addEventListener("click", () => {
-  checkerBg.classList.remove("checker-active");
-});
+function colorChange() {
+  if (count > 0 && count <= 9) {
+    countElement.classList.add("decrement-active");
+    countElement.classList.remove("increment-active");
+  } else if (count > 0 && count >= 10) {
+    countElement.classList.add("increment-active");
+    countElement.classList.remove("decrement-active");
+  } else {
+    countElement.classList.remove("increment-active");
+    countElement.classList.remove("decrement-active");
+  }
+}
