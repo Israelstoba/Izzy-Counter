@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: center;
   background-color: #000;
-
+  overflow: hidden;
   @media (max-width: 300px) {
     .counter-container {
       padding: 2rem 1rem;
@@ -40,7 +40,8 @@
 .counter-container {
   position: relative;
   min-width: 250px;
-  width: 400px;
+  width: 500px;
+  min-height: 600px;
   padding: 2rem;
   border-radius: var(--br-10);
   background-image: linear-gradient(
