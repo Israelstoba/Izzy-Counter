@@ -7,9 +7,15 @@
   --clr-fff: #fff;
   --clr-dark: #555;
   --br-10: 10px;
+  --clr-grey-100: #f7f7f7;
+  --clr-grey-200: #efefef;
+  --clr-grey-300: #e0e0e0;
   --clr-positve: #2abf77;
   --clr-negative: #ff1744;
   --shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  --neomurphism: -3px -3px 7px #fff, 3px 3px 5px rgba(0, 0, 0, 0.3);
+  --neomurphism-inset: inset -3px -3px 7px #fff,
+    inset 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 * {
   padding: 0;
@@ -19,16 +25,21 @@
 
 .title {
   margin-bottom: 2rem;
+  color: var(--clr-negative);
+  padding: 1rem;
+  border-radius: var(--br-10);
+  box-shadow: var(--neomurphism-inset);
+  text-align: center;
 }
 
 .container {
   width: 100%;
   height: 100vh;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000;
+  background-color: var(--clr-grey-300);
   overflow: hidden;
   @media (max-width: 300px) {
     .counter-container {
@@ -42,19 +53,36 @@
   min-width: 250px;
   width: 500px;
   min-height: 600px;
-  padding: 2rem;
+  padding: 0 2rem;
   border-radius: var(--br-10);
-  background-image: linear-gradient(
-    to bottom,
-    var(--clr-primary),
-    var(--clr-light)
-  );
+  background-color: var(--clr-grey-300);
+  // box-shadow: var(--neomurphism-inset);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.btn {
+  // width: 200px;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: var(--br-10);
+  background-color: var(--clr-grey-300);
+  box-shadow: var(--neomurphism-inset);
+  color: var(--clr-dark);
+  font-weight: bold;
+  font-size: 1.2rem;
+  &:active,
+  &:hover {
+    box-shadow: var(--neomurphism);
+  }
+}
 .increment-btn-container {
   display: flex;
   flex-wrap: wrap;
@@ -68,51 +96,54 @@
     height: 50px;
     font-size: 2rem;
     border-radius: 50%;
-  }
-}
 
-h2 {
-  color: var(--clr-dark);
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.btn {
-  width: 200px;
-  padding: 1rem 2rem;
-  margin-bottom: 2rem;
-  border: none;
-  border-radius: var(--br-10);
-  background-color: var(--clr-fff);
-  box-shadow: var(--shadow);
-  color: var(--clr-dark);
-  font-weight: bold;
-  font-size: 1.2rem;
+    &:active,
+    &:hover {
+      transform: scale(1.125);
+      color: var(--clr-positve);
+    }
+  }
+
+  .increment {
+    &:active,
+    &:hover {
+      color: var(--clr-positve);
+    }
+  }
+  .decrement {
+    &:active,
+    &:hover {
+      color: var(--clr-negative);
+    }
+  }
 }
 
 .save-count {
   background-color: transparent;
-  color: var(--clr-negative);
-  border: 1px solid var(--clr-negative);
-  transition: background-color 0.5s;
+  color: var(--clr-dark);
+  border: none;
+  transition: box-shadow 0.5s;
   &:hover {
-    background-color: var(--clr-negative);
-    color: var(--clr-fff);
+    color: var(--clr-positve);
   }
 }
 
 .count-element {
   font-size: 2rem;
   font-weight: bold;
-  background-color: var(--clr-fff);
+  background-color: var(--clr-grey-300);
   border-radius: var(--br-10);
-  box-shadow: var(--shadow);
+  box-shadow: var(--neomurphism);
   color: var(--clr-dark);
   padding: 0.5rem 2rem;
   margin: 1rem 0 2rem;
 }
 
 .entry-log {
+  box-shadow: var(--neomurphism-inset);
+  border-radius: var(--br-10);
   color: var(--clr-dark);
+  padding: 1rem;
   font-weight: bold;
   font-size: 1.1rem;
 }
@@ -166,23 +197,31 @@ h2 {
     text-align: center;
     cursor: pointer;
     padding: 1rem;
+    box-shadow: var(--neomurphism-inset);
     border-radius: var(--br-10);
+    transition: box-shadow 0.9s ease-in-out;
+
+    &:active,
+    &:hover {
+      box-shadow: var(--neomurphism);
+    }
   }
 
   .checker-confirm {
     color: var(--clr-positve);
-    border: 2px solid var(--clr-positve);
+    // border: 2px solid var(--clr-positve);
   }
   .checker-cancel {
     color: var(--clr-negative);
-    border: 2px solid var(--clr-negative);
+    // border: 2px solid var(--clr-negative);
   }
 }
 
 .checker-active {
+  background-color: var(--clr-grey-300);
   opacity: 1;
   bottom: 0%;
-  height: 80%;
+  height: 70%;
   pointer-events: auto;
   z-index: 1000;
   pointer-events: auto;
