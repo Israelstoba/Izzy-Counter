@@ -13,8 +13,8 @@
   --clr-positve: #2abf77;
   --clr-negative: #ff1744;
   --shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  --neomurphism: -3px -3px 7px #fff, 3px 3px 5px rgba(0, 0, 0, 0.3);
-  --neomurphism-inset: inset -3px -3px 7px #fff,
+  --neumorphism: -3px -3px 7px #fff, 3px 3px 5px rgba(0, 0, 0, 0.3);
+  --neumorphism-inset: inset -3px -3px 7px #fff,
     inset 3px 3px 7px rgba(0, 0, 0, 0.3);
 }
 * {
@@ -28,7 +28,7 @@
   color: var(--clr-negative);
   padding: 1rem;
   border-radius: var(--br-10);
-  box-shadow: var(--neomurphism-inset);
+  box-shadow: var(--neumorphism-inset);
   text-align: center;
 }
 
@@ -56,7 +56,7 @@
   padding: 0 2rem;
   border-radius: var(--br-10);
   background-color: var(--clr-grey-300);
-  // box-shadow: var(--neomurphism-inset);
+  // box-shadow: var(--neumorphism-inset);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,13 +74,13 @@ h2 {
   border: none;
   border-radius: var(--br-10);
   background-color: var(--clr-grey-300);
-  box-shadow: var(--neomurphism-inset);
+  box-shadow: var(--neumorphism-inset);
   color: var(--clr-dark);
   font-weight: bold;
   font-size: 1.2rem;
   &:active,
   &:hover {
-    box-shadow: var(--neomurphism);
+    box-shadow: var(--neumorphism);
   }
 }
 .increment-btn-container {
@@ -133,14 +133,14 @@ h2 {
   font-weight: bold;
   background-color: var(--clr-grey-300);
   border-radius: var(--br-10);
-  box-shadow: var(--neomurphism);
+  box-shadow: var(--neumorphism);
   color: var(--clr-dark);
   padding: 0.5rem 2rem;
   margin: 1rem 0 2rem;
 }
 
 .entry-log {
-  box-shadow: var(--neomurphism-inset);
+  box-shadow: var(--neumorphism-inset);
   border-radius: var(--br-10);
   color: var(--clr-dark);
   padding: 1rem;
@@ -149,14 +149,12 @@ h2 {
 }
 
 .increment-active {
-  background-color: var(--clr-positve);
-  color: white;
+  color: var(--clr-positve);
   animation: pulse 0.3s ease-in-out;
 }
 
 .decrement-active {
-  background-color: var(--clr-negative);
-  color: white;
+  color: var(--clr-negative);
   animation: pulse 0.3s ease-in-out;
 }
 
@@ -197,13 +195,13 @@ h2 {
     text-align: center;
     cursor: pointer;
     padding: 1rem;
-    box-shadow: var(--neomurphism-inset);
+    box-shadow: var(--neumorphism-inset);
     border-radius: var(--br-10);
     transition: box-shadow 0.9s ease-in-out;
 
     &:active,
     &:hover {
-      box-shadow: var(--neomurphism);
+      box-shadow: var(--neumorphism);
     }
   }
 
