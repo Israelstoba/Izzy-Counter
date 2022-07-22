@@ -6,6 +6,7 @@ var saveBtn = document.querySelector(".save-count");
 var checkerConfirm = document.querySelector(".checker-confirm");
 var checkerCancel = document.querySelector(".checker-cancel");
 var checkerBg = document.querySelector(".checker-container");
+var resultBg = document.querySelector(".result-container");
 
 /////////////initialize the value of count to be 0
 let count = 0;

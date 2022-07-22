@@ -23,6 +23,10 @@
           box-sizing: border-box;
 }
 
+body {
+  position: relative;
+}
+
 .title {
   margin-bottom: 2rem;
   color: var(--clr-negative);
@@ -162,15 +166,15 @@ h2 {
 
 .increment-btn-container .btn {
   padding: 0px;
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   font-size: 2rem;
   border-radius: 50%;
 }
 
 .increment-btn-container .btn:active, .increment-btn-container .btn:hover {
-  -webkit-transform: scale(1.125);
-          transform: scale(1.125);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   color: var(--clr-positve);
 }
 
@@ -317,10 +321,71 @@ h2 {
   background-color: var(--clr-grey-300);
   opacity: 1;
   bottom: 0%;
-  height: 70%;
+  height: 80%;
   pointer-events: auto;
   z-index: 1000;
   pointer-events: auto;
+}
+
+.result-checker__active {
+  display: block;
+  height: 100%;
+}
+
+.show-result-btn-wrapper {
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  position: relative;
+  color: var(--clr-positve);
+}
+
+.show-result-btn-wrapper .show-result {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.show-result-btn-wrapper .fa-arrow-right-long {
+  margin-right: 100px;
+  -webkit-animation: leftToRight infinite 3s ease-in-out;
+          animation: leftToRight infinite 3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+}
+
+@-webkit-keyframes leftToRight {
+  0% {
+    left: 10px;
+  }
+  50% {
+    left: 30px;
+  }
+  100% {
+    left: 10px;
+  }
+}
+
+@keyframes leftToRight {
+  0% {
+    left: 10px;
+  }
+  50% {
+    left: 30px;
+  }
+  100% {
+    left: 10px;
+  }
 }
 
 .result-container {
@@ -336,7 +401,7 @@ h2 {
           flex-direction: column;
   padding: 1rem;
   width: 100%;
-  height: 100%;
+  height: 0;
   border-radius: var(--br-10);
   background-color: var(--clr-grey-300);
   display: none;
@@ -344,14 +409,15 @@ h2 {
 
 .result-container .exit-result {
   position: absolute;
-  top: 10px;
+  top: 35px;
   right: 20px;
   font-size: 1.6rem;
+  padding: 1rem;
   color: var(--clr-dark);
 }
 
 .result-container .title {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .result-container .download-btn:hover {
