@@ -27,7 +27,7 @@
 
 .title {
   margin-bottom: 2rem;
-  color: var(--clr-negative);
+  color: var(--clr-positve);
   padding: 1rem;
   border-radius: var(--br-10);
   -webkit-box-shadow: var(--neumorphism-inset);
@@ -410,10 +410,6 @@ h2 {
   font-size: 1.6rem;
   padding: 1rem;
   color: var(--clr-negative);
-}
-
-.title {
-  color: var(--clr-dark);
 }
 
 .download-btn:hover {
