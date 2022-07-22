@@ -7,6 +7,7 @@
   --clr-fff: #fff;
   --clr-dark: #555;
   --br-10: 10px;
+  --br-50: 50%;
   --clr-grey-100: #f7f7f7;
   --clr-grey-200: #efefef;
   --clr-grey-300: #e0e0e0;
@@ -157,7 +158,7 @@ h2 {
 /////////////Save count button styles
 .save-count {
   background-color: transparent;
-  color: var(--clr-dark);
+  color: var(--clr-negative);
   border: none;
   transition: box-shadow 0.5s;
   &:hover {
@@ -166,14 +167,24 @@ h2 {
 }
 /////////////////count Element style rule
 .count-element {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: bold;
+  width: 100px;
+  height: 100px;
   background-color: var(--clr-grey-300);
-  border-radius: var(--br-10);
+  border-radius: var(--br-50);
   box-shadow: var(--neumorphism);
   color: var(--clr-dark);
-  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 1rem 0 2rem;
+}
+
+.reset-btn {
+  color: var(--clr-negative);
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .increment-active {
