@@ -1,5 +1,5 @@
 var countElement = document.querySelector(".count-element");
-var countLog = document.querySelector(".entry-log");
+var countLog = document.querySelector(".text-area");
 var incrementBtn = document.querySelector(".increment");
 var decrementBtn = document.querySelector(".decrement");
 var saveBtn = document.querySelector(".save-count");
@@ -7,6 +7,8 @@ var checkerConfirm = document.querySelector(".checker-confirm");
 var checkerCancel = document.querySelector(".checker-cancel");
 var checkerBg = document.querySelector(".checker-container");
 var resultBg = document.querySelector(".result-container");
+var showResultBtn = document.querySelector(".show-result");
+var exitResultBtn = document.querySelector(".exit-result");
 
 /////////////initialize the value of count to be 0
 let count = 0;
@@ -65,3 +67,13 @@ function colorChange() {
     countElement.classList.remove("decrement-active");
   }
 }
+
+//////////To show the count entry results
+
+showResultBtn.addEventListener("click", () => {
+  resultBg.classList.add("result-container__active");
+});
+
+exitResultBtn.addEventListener("click", () => {
+  resultBg.classList.remove("result-container__active");
+});
