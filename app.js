@@ -9,10 +9,10 @@ var checkerBg = document.querySelector(".checker-container");
 var resultBg = document.querySelector(".result-container");
 var showResultBtn = document.querySelector(".show-result");
 var exitResultBtn = document.querySelector(".exit-result");
+var item = document.querySelector(".item-name");
 
 /////////////initialize the value of count to be 0
 let count = 0;
-
 ///////////listen to the increment button when it is clicked
 incrementBtn.addEventListener("click", () => {
   count++;
@@ -37,12 +37,14 @@ saveBtn.addEventListener("click", () => {
 
 //////////to  save the value of the countElement
 checkerConfirm.addEventListener("click", () => {
-  countLog.innerHTML += " " + count + " ,";
+  let itemName = item.value;
+  countLog.innerHTML += itemName + " :" + " " + count + " , ";
   count = 0;
   countElement.innerHTML = 0;
   checkerBg.classList.remove("checker-active");
   countElement.classList.remove("increment-active");
   countElement.classList.remove("decrement-active");
+  item.value = " ";
 });
 //////////to  cancel count entry
 checkerCancel.addEventListener("click", () => {
@@ -51,6 +53,7 @@ checkerCancel.addEventListener("click", () => {
   checkerBg.classList.remove("checker-active");
   countElement.classList.remove("increment-active");
   countElement.classList.remove("decrement-active");
+  item.value = " ";
 });
 
 //////////// to add color change to the countElement
