@@ -357,5 +357,9 @@ h2 {
   font-weight: bold;
   font-size: 1.3rem;
   outline: none;
+
+  & > {
+    display: block;
+  }
 }
 //////////////////general media query for the counter app

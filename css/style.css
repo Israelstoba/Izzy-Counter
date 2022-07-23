@@ -446,4 +446,8 @@ h2 {
   font-size: 1.3rem;
   outline: none;
 }
+
+.text-area > {
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */

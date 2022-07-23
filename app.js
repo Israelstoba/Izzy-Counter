@@ -53,7 +53,7 @@ checkerConfirm.addEventListener("click", () => {
   checkerBg.classList.remove("checker-active");
   countElement.classList.remove("increment-active");
   countElement.classList.remove("decrement-active");
-  item.value = " ";
+  item.value = item.ariaPlaceholder;
 });
 //////////to  cancel count entry
 checkerCancel.addEventListener("click", () => {
@@ -62,7 +62,7 @@ checkerCancel.addEventListener("click", () => {
   checkerBg.classList.remove("checker-active");
   countElement.classList.remove("increment-active");
   countElement.classList.remove("decrement-active");
-  item.value = " ";
+  item.value = item.ariaPlaceholder;
 });
 
 //////////// to add color change to the countElement
