@@ -1,5 +1,5 @@
 var countElement = document.querySelector(".count-element");
-var countLog = document.querySelector(".text-area");
+var countLogged = document.querySelector(".text-area");
 var incrementBtn = document.querySelector(".increment");
 var decrementBtn = document.querySelector(".decrement");
 var saveBtn = document.querySelector(".save-count");
@@ -11,6 +11,12 @@ var showResultBtn = document.querySelector(".show-result");
 var exitResultBtn = document.querySelector(".exit-result");
 var item = document.querySelector(".item-name");
 var resetCount = document.querySelector(".reset-btn");
+var preloader = document.querySelector(".preloader-container");
+
+/////////////////////////////////Webpage Preloader
+window.addEventListener("load", () => {
+  preloader.style.display = "none";
+});
 
 /////////////initialize the value of count to be 0
 let count = 0;
@@ -47,7 +53,7 @@ saveBtn.addEventListener("click", () => {
 //////////to  save the value of the countElement
 checkerConfirm.addEventListener("click", () => {
   let itemName = item.value;
-  countLog.innerHTML += itemName + " :" + " " + count + " , ";
+  countLogged.innerHTML += "\n" + itemName + " :" + " " + count + " , ";
   count = 0;
   countElement.innerHTML = 0;
   checkerBg.classList.remove("checker-active");
@@ -64,21 +70,6 @@ checkerCancel.addEventListener("click", () => {
   countElement.classList.remove("decrement-active");
   item.value = item.ariaPlaceholder;
 });
-
-//////////// to add color change to the countElement
-
-function colorChange() {
-  // if (count > 0 && count <= 9) {
-  //   countElement.classList.add("decrement-active");
-  //   countElement.classList.remove("increment-active");
-  // } else if (count > 0 && count >= 10) {
-  //   countElement.classList.add("increment-active");
-  //   countElement.classList.remove("decrement-active");
-  // } else {
-  //   countElement.classList.remove("increment-active");
-  //   countElement.classList.remove("decrement-active");
-  // }
-}
 
 //////////To show the count entry results
 

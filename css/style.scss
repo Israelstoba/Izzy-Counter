@@ -6,6 +6,8 @@
   --clr-acsent: #ff0063;
   --clr-fff: #fff;
   --clr-dark: #555;
+  --clr-logo-light: #9900cc;
+  --clr-logo-dark: #6a008e;
   --br-10: 10px;
   --br-50: 50%;
   --clr-grey-100: #f7f7f7;
@@ -352,14 +354,93 @@ h2 {
   background-color: transparent;
   border-radius: var(--br-10);
   border: 2px solid var(--clr-positve);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: var(--clr-dark);
   font-weight: bold;
   font-size: 1.3rem;
   outline: none;
+  overflow: scroll;
 
   & > {
     display: block;
+  }
+}
+
+/////////////////page loader animation
+.preloader-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.dot-wrapper {
+  width: 200px;
+  height: 50px;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dots {
+  // display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--clr-logo-dark);
+  margin: 0 10px;
+  position: absolute;
+}
+
+.dot1 {
+  left: 0;
+  animation: dot1 infinite 1s ease;
+}
+.dot2 {
+  right: 0;
+  animation: dot2 infinite 1s ease;
+}
+.dot3 {
+  animation: dot3 infinite 1s ease;
+}
+
+@keyframes dot1 {
+  0% {
+    left: 50px;
+  }
+  100% {
+    left: 160px;
+    background-color: var(--clr-logo-light);
+  }
+}
+
+@keyframes dot2 {
+  0% {
+    right: 50px;
+  }
+  100% {
+    right: 160px;
+    background-color: var(--clr-logo-light);
+  }
+}
+
+@keyframes dot3 {
+  0% {
+    top: 20px;
+  }
+  50% {
+    top: -25px;
+    background-color: var(--clr-logo-light);
+  }
+  100% {
+    top: 20px;
   }
 }
 //////////////////general media query for the counter app
