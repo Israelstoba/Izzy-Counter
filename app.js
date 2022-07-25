@@ -15,7 +15,9 @@ var preloader = document.querySelector(".preloader-container");
 
 /////////////////////////////////Webpage Preloader
 window.addEventListener("load", () => {
-  preloader.style.display = "none";
+  setTimeout(function () {
+    preloader.classList.add("remove-preloader");
+  }, 3000);
 });
 
 /////////////initialize the value of count to be 0
