@@ -346,6 +346,18 @@ h2 {
   color: var(--clr-negative);
 }
 
+// .disabled-option {
+//   color: var(--clr-grey-600);
+// }
+
+.filename-select {
+  outline: none;
+  padding: 0.5rem 1rem;
+  option {
+    margin: 0 auto 4rem;
+  }
+}
+
 .download-btn {
   &:hover {
     color: var(--clr-positve);
@@ -355,7 +367,7 @@ h2 {
 .text-area {
   width: 100%;
   padding: 1rem;
-  min-height: 300px;
+  min-height: 200px;
   background-color: transparent;
   border-radius: var(--br-10);
   border: 2px solid var(--clr-positve);

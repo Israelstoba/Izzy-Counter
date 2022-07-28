@@ -133,7 +133,12 @@ function downloadFile(filename, content) {
 window.onload = () => {
   document.querySelector(".download-btn").addEventListener("click", (e) => {
     //////////////the value of the filename in the input field
-    const filename = document.querySelector(".filename").value;
+    const documentName = document.querySelector(".document-name").value;
+    const fileType = document.querySelector(".file-type").value;
+    const downloadEl = documentName + fileType;
+    filename = downloadEl;
+
+    // const filename = document.querySelector(".filename").value;
 
     //////////////the value of the text in the text div
     const content = document.querySelector(".text-area").innerHTML;

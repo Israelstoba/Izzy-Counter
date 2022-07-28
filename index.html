@@ -55,11 +55,25 @@
           </div>
           <i class="fa-solid fa-xmark exit-result"></i>
           <div id="text-area" class="text-area"></div>
-          <input
+          <!-- <input
             type="text"
             class="btn filename"
             placeholder="Enter filename e.g text.doc"
+          /> -->
+          <input
+            type="text"
+            class="document-name btn"
+            placeholder="Input file name"
           />
+          <select name="" id="" class="filename-select btn file-type">
+            <option disabled selected class="disabled-option">
+              select file type
+            </option>
+            <option class="file-types">.doc</option>
+            <option class="file-types">.txt</option>
+            <option class="file-types">.xls</option>
+            <option class="file-types">.pdf</option>
+          </select>
           <button class="btn download-btn">
             Download Result
             <i class="fa-solid fa-download"></i>
